@@ -1,0 +1,26 @@
+[
+	{
+		"name": "GitHub",
+		"link": "https://github.com/Peanutt42",
+		"value": "github.com/Peanutt42",
+		"icon": "icons/github.svg"
+	},
+	{
+		"name": "Codeberg",
+		"link": "https://codeberg.org/Peanutt42",
+		"value": "codeberg.org/Peanutt42",
+		"icon": "icons/codeberg.svg"
+	},
+	{
+		"name": "Mastodon",
+		"link": "https://chaos.social/@peanutt42",
+		"value": "@peanutt42@chaos.social",
+		"icon": "icons/mastodon.svg"
+	},
+	{
+		"name": "dotfiles",
+		"link": "https://codeberg.org/Peanutt42/dotfiles",
+		"value": "~/Projects/dotfiles",
+		"icon": null
+	}
+]

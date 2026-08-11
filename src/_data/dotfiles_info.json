@@ -1,0 +1,32 @@
+[
+	{
+		"name": "OS",
+		"icon_url": "icons/nixos.svg",
+		"value": "NixOS"
+	},
+	{
+		"name": "WM",
+		"icon_url": "icons/niri.svg",
+		"value": "niri"
+	},
+	{
+		"name": "$EDITOR",
+		"icon_url": "icons/neovim.svg",
+		"value": "NeoVim"
+	},
+	{
+		"name": "$SHELL",
+		"icon_url": "icons/fish.svg",
+		"value": "fish"
+	},
+	{
+		"name": "$TERM",
+		"icon_url": "icons/kitty.svg",
+		"value": "kitty"
+	},
+	{
+		"name": "FONT",
+		"icon_url": "icons/jetbrains.svg",
+		"value": "JetBrainsMonoNF"
+	}
+]

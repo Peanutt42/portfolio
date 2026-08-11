@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "JetBrains Mono";
-	src: url(fonts/JetBrainsMono-Regular.woff2) format("woff2");
+	src: url(JetBrainsMono-Regular.woff2) format("woff2");
 	font-display: swap;
 }
 
@@ -15,7 +15,7 @@
 :root {
 	--bg: #050505;
 	--text: #ffffff;
-	--text-muted: #d9d9d9;
+	--text-muted: #a9a9a9;
 	--accent: #00529c;
 	--heading: #ffed00;
 	--divider: #545454;
@@ -195,6 +195,7 @@ header {
 .screenshot {
 	display: block;
 	width: 100%;
+	height: auto;
 }
 
 .site-footer {

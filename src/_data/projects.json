@@ -1,0 +1,56 @@
+[
+	{
+		"name": "eye-ai",
+		"description": "Computer vision app for blind and visually impaired individuals, communicating via spatial audio.<br>Built for <a href=\"https://www.bw-ki.de\" target=\"_blank\">BWKI</a> competition with 3 classmates.",
+		"source": "https://github.com/SimplyExo/eye-ai",
+		"icon": {
+			"url": "icons/eye-ai-logo-export.webp",
+			"alt": "Eye AI"
+		},
+		"screenshots": [
+			{
+				"url": "images/EyeAIDemo.webp",
+				"alt": "Eye AI demo"
+			}
+		],
+		"actions": []
+	},
+	{
+		"name": "ardemu",
+		"description": "Toy AVR CPU emulator written in Rust<br>(even runs in browser with wasm!)",
+		"source": "https://codeberg.org/Peanutt42/ardemu",
+		"icon": {
+			"url": "icons/ardemu.svg",
+			"alt": "Ardemu icon"
+		},
+		"screenshots": [
+			{
+				"url": "images/Ardemu - Screenshot.webp",
+				"alt": "Ardemu screenshot"
+			}
+		],
+		"actions": [
+			{
+				"name": "Run in browser",
+				"url": "/ardemu_web/"
+			}
+		]
+	},
+	{
+		"name": "raytracer",
+		"description": "CPU and GPU implementation in Rust of the <a href=\"https://raytracing.github.io/\" target=\"_blank\">Raytracing&nbsp;in&nbsp;a&nbsp;weekend series</a>",
+		"source": "https://codeberg.org/Peanutt42/raytracer",
+		"icon": null,
+		"screenshots": [
+			{
+				"url": "images/RayTracer - Screenshot.webp",
+				"alt": "Raytracer screenshot"
+			},
+			{
+				"url": "images/RayTracer - Wallpaper.webp",
+				"alt": "Raytracer wallpaper"
+			}
+		],
+		"actions": []
+	}
+]
