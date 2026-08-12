@@ -10,7 +10,9 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/images");
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		svgShortCircuit: "size"
+		formats: ["webp", "jpeg", "svg", "auto"],
+		// dont rasterize svgs to webp
+		svgShortCircuit: true
 	});
 
 	eleventyConfig.addPlugin(EleventyVitePlugin, {
