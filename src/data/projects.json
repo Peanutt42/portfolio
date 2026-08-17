@@ -4,12 +4,12 @@
 		"description": "Computer vision app for blind and visually impaired individuals, communicating via spatial audio.<br>Built for <a href=\"https://www.bw-ki.de\" target=\"_blank\">BWKI</a> competition with 3 classmates.",
 		"source": "https://github.com/SimplyExo/eye-ai",
 		"icon": {
-			"url": "icons/eye-ai-logo-export.webp",
+			"url": "/icons/eye-ai-logo-export.webp",
 			"alt": "Eye AI"
 		},
 		"screenshots": [
 			{
-				"url": "images/EyeAIDemo.webp",
+				"url": "/images/EyeAIDemo.webp",
 				"alt": "Eye AI demo"
 			}
 		],
@@ -20,12 +20,12 @@
 		"description": "Toy AVR CPU emulator written in Rust<br>(even runs in browser with wasm!)",
 		"source": "https://codeberg.org/Peanutt42/ardemu",
 		"icon": {
-			"url": "icons/ardemu.svg",
+			"url": "/icons/ardemu.svg",
 			"alt": "Ardemu icon"
 		},
 		"screenshots": [
 			{
-				"url": "images/Ardemu - Screenshot.webp",
+				"url": "/images/Ardemu - Screenshot.webp",
 				"alt": "Ardemu screenshot"
 			}
 		],
@@ -43,11 +43,11 @@
 		"icon": null,
 		"screenshots": [
 			{
-				"url": "images/RayTracer - Screenshot.webp",
+				"url": "/images/RayTracer - Screenshot.webp",
 				"alt": "Raytracer screenshot"
 			},
 			{
-				"url": "images/RayTracer - Wallpaper.webp",
+				"url": "/images/RayTracer - Wallpaper.webp",
 				"alt": "Raytracer wallpaper"
 			}
 		],

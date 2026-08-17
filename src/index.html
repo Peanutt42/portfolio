@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Peanutt42</title>
         <link rel="stylesheet" href="./style.css"/>
-        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     </head>
     <body>
         <div class="container">
             <header class="profile-header">
                 <div class="profile">
-                    <img src="favicon.ico" alt="Peanutt42" class="profile-pic" width="256" height="255" eleventy:ignore/>
+                    <img src="/favicon.ico" alt="Peanutt42" class="profile-pic" width="256" height="255" />
                     <div>
                         <!-- https://patorjk.com/software/taag/#p=display&f=ANSI+Shadow&t=Peanutt42 -->
                         <pre class="profile-name" aria-hidden="true">
@@ -27,30 +27,30 @@
             <div style="width: 100%; display: flex; justify-content: center;">
                 <table>
                     <tbody>
-                        {% for social in socials %}
+                        {{#each socials}}
                             <tr>
                                 <td class="info-type">
-                                    {% if social.icon != null %}
-                                        <img src="{{ social.icon }}" alt="{{ social.name }} icon" class="social-icon"/>
-                                    {% else %}
+                                    {{#if this.icon}}
+                                        <img src="{{this.icon}}" alt="{{this.name}} icon" class="social-icon"/>
+                                    {{else}}
                                         <div class="social-icon"></div>
-                                    {% endif %}
-                                    {{ social.name }}:
+									{{/if}}
+                                    {{this.name}}:
                                 </td>
                                 <td class="info-link" colspan="2">
-                                    <a href="{{ social.link }}" target="_blank">{{ social.value }}</a>
+                                    <a href="{{this.link}}" target="_blank">{{this.value}}</a>
                                 </td>
                             </tr>
-                        {% endfor %}
-                        {% for info in dotfiles_info %}
+                        {{/each}}
+                        {{#each dotfilesInfo}}
                             <tr class="dotfiles-info">
-                                <td>{{ info.name }}:</td>
+                                <td>{{this.name}}:</td>
                                 <td></td>
                                 <td class="info-type">
-                                    <img src="{{ info.icon_url }}" alt="{{ info.name }} icon" class="social-icon"/> {{ info.value }}
+                                    <img src="{{this.iconUrl}}" alt="{{this.name}} icon" class="social-icon"/> {{this.value}}
                                 </td>
                             </tr>
-                        {% endfor %}
+                        {{/each}}
                     </tbody>
                 </tbody>
             </table>
@@ -59,44 +59,44 @@
         <p class="project-name">$ ls ~/Projects -l</p>
         <section class="projects">
             <div class="divider"></div>
-            {% for project in projects %}
+            {{#each projects}}
                 <div class="project">
                     <div class="project-header">
                         <div>
-                            <p class="project-name">~/Projects/{{ project.name }}</p>
+                            <p class="project-name">~/Projects/{{this.name}}</p>
                             <p class="project-description">
-                                {{ project.description | safe }}
+								{{{this.description}}}
                             </p>
                         </div>
-                        {% if project.icon != null %}
-                            <img src="{{ project.icon.url }}" alt="{{ project.icon.alt }}" class="project-icon"/>
-                        {% endif %}
+                        {{#if this.icon}}
+                            <img src="{{this.icon.url}}" alt="{{this.icon.alt}}" class="project-icon"/>
+                        {{/if}}
                     </div>
-                    {% for screenshot in project.screenshots %}
-                        <img src="{{ screenshot.url }}" alt="{{ screenshot.alt }}" class="screenshot"/>
-                    {% endfor %}
+                    {{#each this.screenshots}}
+                        <img src="{{this.url}}" alt="{{this.alt}}" class="screenshot"/>
+					{{/each}}
                     <div class="project-actions">
-                        <a href="{{ project.source }}" target="_blank" class="link-button">
-                            {% if "codeberg" in project.source %}
-                                <img src="icons/codeberg.svg" width="16" height="16" alt="Codeberg icon"/>
-                            {% else %}
-                                <img src="icons/github.svg" width="16" height="16" alt="Github icon"/>
-                            {% endif %}
+                        <a href="{{this.source}}" target="_blank" class="link-button">
+							{{#if (includes this.source "codeberg")}}
+                                <img src="/icons/codeberg.svg" width="16" height="16" alt="Codeberg icon"/>
+							{{else}}
+                                <img src="/icons/github.svg" width="16" height="16" alt="Github icon"/>
+							{{/if}}
                             Source
                         </a>
-                        {% for action in project.actions %}
-                            <a href="{{ action.url }}" class="link-button secondary">
-                                {{ action.name }}
+                        {{#each this.actions}}
+                            <a href="{{this.url}}" class="link-button secondary">
+                                {{this.name}}
                             </a>
-                        {% endfor %}
+						{{/each}}
                     </div>
                 </div>
                 <div class="divider"></div>
-            {% endfor %}
+			{{/each}}
         </section>
         <a href="https://notbyai.fyi/" target="_blank">
             <img
-                src="icons/Written-By-a-Human-Not-By-AI-Badge-white.svg"
+                src="/icons/Written-By-a-Human-Not-By-AI-Badge-white.svg"
                 width="120"
                 height="38"
                 alt="Written by Human, Not by AI"
@@ -106,7 +106,7 @@
             <p class="footer-text">
                 This website has been brought to you by this Raspberrypi 4b (with&nbsp;4&nbsp;GB&nbsp;RAM)
             </p>
-            <img src="images/raspberrypi4b.webp" class="screenshot" alt="Raspberry Pi 4b in a white Fractal North Pi Case"/>
+            <img src="/images/raspberrypi4b.webp" class="screenshot" alt="Raspberry Pi 4b in a white Fractal North Pi Case"/>
         </section>
     </body>
-</html></div></body></html>
+</html>
