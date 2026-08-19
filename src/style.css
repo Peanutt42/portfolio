@@ -73,18 +73,20 @@ header {
 	white-space: pre;
 	color: transparent;
 	padding: 0;
-	background: linear-gradient(var(--pride-red) 0%,
-			var(--pride-red) 17%,
-			var(--pride-orange) 17%,
-			var(--pride-orange) 33%,
-			var(--pride-yellow) 33%,
-			var(--pride-yellow) 50%,
-			var(--pride-green) 50%,
-			var(--pride-green) 67%,
-			var(--pride-blue) 67%,
-			var(--pride-blue) 83%,
-			var(--pride-violet) 83%,
-			var(--pride-violet) 100%);
+	background: linear-gradient(
+		var(--pride-red) 0%,
+		var(--pride-red) 17%,
+		var(--pride-orange) 17%,
+		var(--pride-orange) 33%,
+		var(--pride-yellow) 33%,
+		var(--pride-yellow) 50%,
+		var(--pride-green) 50%,
+		var(--pride-green) 67%,
+		var(--pride-blue) 67%,
+		var(--pride-blue) 83%,
+		var(--pride-violet) 83%,
+		var(--pride-violet) 100%
+	);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-clip: text;
@@ -99,7 +101,6 @@ header {
 .projects {
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
 }
 
 .project {
@@ -126,12 +127,24 @@ header {
 }
 
 .project-name {
-	font-size: clamp(1.5rem, 1.00rem + 0.6vw, 2.0rem);
+	font-size: clamp(0.9rem, 0.9rem + 1vw, 2.5rem);
 	font-weight: bold;
-	font-kerning: none;
-	line-height: 1.5;
-	white-space: pre;
+	line-height: 2.5;
 	color: var(--heading);
+}
+
+.project-name-compact {
+	display: none;
+}
+
+/* only shows project name without the "~/Projects/" prefix on small width devices */
+@media (max-width: 430px) {
+	.project-name-full {
+		display: none;
+	}
+	.project-name-compact {
+		display: block;
+	}
 }
 
 .project-description {
@@ -151,6 +164,7 @@ header {
 
 .project-actions {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 0.5rem;
 }
 

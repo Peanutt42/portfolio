@@ -1,112 +1,196 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Peanutt42</title>
-        <link rel="stylesheet" href="./style.css"/>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-    </head>
-    <body>
-        <div class="container">
-            <header class="profile-header">
-                <div class="profile">
-                    <img src="/favicon.ico" alt="Peanutt42" class="profile-pic" width="256" height="255" />
-                    <div>
-                        <!-- https://patorjk.com/software/taag/#p=display&f=ANSI+Shadow&t=Peanutt42 -->
-                        <pre class="profile-name" aria-hidden="true">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Peanutt42</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<!-- in order to have mastodon verify this website is mine -->
+		<link rel="me" href="https://chaos.social/@peanutt42" />
+	</head>
+	<body>
+		<div class="container">
+			<header class="profile-header">
+				<div class="profile">
+					<img
+						src="/favicon.ico"
+						alt="Peanutt42"
+						class="profile-pic"
+						width="256"
+						height="255"
+					/>
+					<div>
+						<!-- https://patorjk.com/software/taag/#p=display&f=ANSI+Shadow&t=Peanutt42 -->
+						<pre class="profile-name" aria-hidden="true">
 ██████╗ ███████╗ █████╗ ███╗   ██╗██╗   ██╗████████╗████████╗██╗  ██╗██████╗ 
 ██╔══██╗██╔════╝██╔══██╗████╗  ██║██║   ██║╚══██╔══╝╚══██╔══╝██║  ██║╚════██╗
 ██████╔╝█████╗  ███████║██╔██╗ ██║██║   ██║   ██║      ██║   ███████║ █████╔╝
 ██╔═══╝ ██╔══╝  ██╔══██║██║╚██╗██║██║   ██║   ██║      ██║   ╚════██║██╔═══╝ 
 ██║     ███████╗██║  ██║██║ ╚████║╚██████╔╝   ██║      ██║        ██║███████╗
-╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝    ╚═╝      ╚═╝        ╚═╝╚══════╝</pre>
-                    </div>
-                </div>
-            </header>
-            <div style="width: 100%; display: flex; justify-content: center;">
-                <table>
-                    <tbody>
-                        {{#each socials}}
-                            <tr>
-                                <td class="info-type">
-                                    {{#if this.icon}}
-                                        <img src="{{this.icon}}" alt="{{this.name}} icon" class="social-icon"/>
-                                    {{else}}
-                                        <div class="social-icon"></div>
-									{{/if}}
-                                    {{this.name}}:
-                                </td>
-                                <td class="info-link" colspan="2">
-                                    <a href="{{this.link}}" target="_blank">{{this.value}}</a>
-                                </td>
-                            </tr>
-                        {{/each}}
-                        {{#each dotfilesInfo}}
-                            <tr class="dotfiles-info">
-                                <td>{{this.name}}:</td>
-                                <td></td>
-                                <td class="info-type">
-                                    <img src="{{this.iconUrl}}" alt="{{this.name}} icon" class="social-icon"/> {{this.value}}
-                                </td>
-                            </tr>
-                        {{/each}}
-                    </tbody>
-                </tbody>
-            </table>
-        </div>
-        <br> <br> <br>
-        <p class="project-name">$ ls ~/Projects -l</p>
-        <section class="projects">
-            <div class="divider"></div>
-            {{#each projects}}
-                <div class="project">
-                    <div class="project-header">
-                        <div>
-                            <p class="project-name">~/Projects/{{this.name}}</p>
-                            <p class="project-description">
-								{{{this.description}}}
-                            </p>
-                        </div>
-                        {{#if this.icon}}
-                            <img src="{{this.icon.url}}" alt="{{this.icon.alt}}" class="project-icon"/>
-                        {{/if}}
-                    </div>
-                    {{#each this.screenshots}}
-                        <img src="{{this.url}}" alt="{{this.alt}}" class="screenshot"/>
-					{{/each}}
-                    <div class="project-actions">
-                        <a href="{{this.source}}" target="_blank" class="link-button">
-							{{#if (includes this.source "codeberg")}}
-                                <img src="/icons/codeberg.svg" width="16" height="16" alt="Codeberg icon"/>
-							{{else}}
-                                <img src="/icons/github.svg" width="16" height="16" alt="Github icon"/>
-							{{/if}}
-                            Source
-                        </a>
-                        {{#each this.actions}}
-                            <a href="{{this.url}}" class="link-button secondary">
-                                {{this.name}}
-                            </a>
+╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝    ╚═╝      ╚═╝        ╚═╝╚══════╝</pre
+						>
+					</div>
+				</div>
+			</header>
+			<div style="width: 100%; display: flex; justify-content: center">
+				<table>
+					<tbody>
+						{{#each socials}}
+						<tr>
+							<td class="info-type">
+								{{#if this.icon}}
+								<img
+									src="{{this.icon}}"
+									alt="{{this.name}} icon"
+									class="social-icon"
+								/>
+								{{else}}
+								<div class="social-icon"></div>
+								{{/if}} {{this.name}}:
+							</td>
+							<td class="info-link" colspan="2">
+								<a href="{{this.link}}" target="_blank"
+									>{{this.value}}</a
+								>
+							</td>
+						</tr>
 						{{/each}}
-                    </div>
-                </div>
-                <div class="divider"></div>
-			{{/each}}
-        </section>
-        <a href="https://notbyai.fyi/" target="_blank">
-            <img
-                src="/icons/Written-By-a-Human-Not-By-AI-Badge-white.svg"
-                width="120"
-                height="38"
-                alt="Written by Human, Not by AI"
-                loading="lazy"/>
-        </a>
-        <section class="site-footer">
-            <p class="footer-text">
-                This website has been brought to you by this Raspberrypi 4b (with&nbsp;4&nbsp;GB&nbsp;RAM)
-            </p>
-            <img src="/images/raspberrypi4b.webp" class="screenshot" alt="Raspberry Pi 4b in a white Fractal North Pi Case"/>
-        </section>
-    </body>
+						<!--  -->
+						{{#each dotfilesInfo}}
+						<tr class="dotfiles-info">
+							<td>{{this.name}}:</td>
+							<td></td>
+							<td class="info-type">
+								<img
+									src="{{this.iconUrl}}"
+									alt="{{this.name}} icon"
+									class="social-icon"
+								/>
+								{{this.value}}
+							</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+			<br />
+			<br />
+			<br />
+			<p class="project-name">$ ls ~/Projects -l</p>
+			<section class="projects">
+				<div class="divider"></div>
+				{{#each projects}}
+				<div class="project">
+					<div class="project-header">
+						<div style="width: 100%">
+							<p class="project-name project-name-full">
+								~/Projects/{{this.name}}
+							</p>
+							<p class="project-name project-name-compact">
+								{{this.name}}
+							</p>
+							<p class="project-description">
+								{{{this.description}}}
+							</p>
+						</div>
+						{{#if this.icon}}
+						<img
+							src="{{this.icon.url}}"
+							alt="{{this.icon.alt}}"
+							class="project-icon"
+						/>
+						{{/if}}
+					</div>
+					{{#each this.screenshots}}
+					<img
+						src="{{this.url}}"
+						alt="{{this.alt}}"
+						class="screenshot"
+					/>
+					{{/each}}
+					<div class="project-actions">
+						{{#if this.source}}
+						<a
+							href="{{this.source}}"
+							target="_blank"
+							class="link-button"
+						>
+							{{#if (includes this.source "codeberg")}}
+							<img
+								src="/icons/codeberg.svg"
+								width="16"
+								height="16"
+								alt="Codeberg icon"
+							/>
+							{{else}}
+							<img
+								src="/icons/github.svg"
+								width="16"
+								height="16"
+								alt="Github icon"
+							/>
+							{{/if}} Source
+						</a>
+						{{else}}
+						<!--  -->
+						{{#each this.multipleSources}}
+						<a
+							href="{{this.url}}"
+							target="_blank"
+							class="link-button"
+						>
+							{{#if (includes this.url "codeberg")}}
+							<img
+								src="/icons/codeberg.svg"
+								width="16"
+								height="16"
+								alt="Codeberg icon"
+							/>
+							{{else}}
+							<img
+								src="/icons/github.svg"
+								width="16"
+								height="16"
+								alt="Github icon"
+							/>
+							{{/if}} {{this.name}}
+						</a>
+						{{/each}}
+						<!--  -->
+						{{/if}}
+						<!--  -->
+						{{#each this.actions}}
+						<a href="{{this.url}}" class="link-button secondary">
+							{{this.name}}
+						</a>
+						{{/each}}
+					</div>
+				</div>
+				<div class="divider"></div>
+				{{/each}}
+			</section>
+			<a href="https://notbyai.fyi/" target="_blank">
+				<img
+					src="/icons/Written-By-a-Human-Not-By-AI-Badge-white.svg"
+					width="120"
+					height="38"
+					alt="Written by Human, Not by AI"
+					loading="lazy"
+				/>
+			</a>
+			<section class="site-footer">
+				<p class="footer-text">
+					This website has been brought to you by this Raspberrypi 4b
+					(with&nbsp;4&nbsp;GB&nbsp;RAM)
+				</p>
+				<img
+					src="/images/raspberrypi4b.webp"
+					class="screenshot"
+					alt="Raspberry Pi 4b in a white Fractal North Pi Case"
+				/>
+			</section>
+		</div>
+	</body>
 </html>

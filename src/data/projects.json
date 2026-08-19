@@ -17,7 +17,7 @@
 	},
 	{
 		"name": "ardemu",
-		"description": "Toy AVR CPU emulator written in Rust<br>(even runs in browser with wasm!)",
+		"description": "Toy AVR CPU emulator written in Rust<br>(even runs in browser with wasm!).",
 		"source": "https://codeberg.org/Peanutt42/ardemu",
 		"icon": {
 			"url": "/icons/ardemu.svg",
@@ -38,7 +38,7 @@
 	},
 	{
 		"name": "raytracer",
-		"description": "CPU and GPU implementation in Rust of the <a href=\"https://raytracing.github.io/\" target=\"_blank\">Raytracing&nbsp;in&nbsp;a&nbsp;weekend series</a>",
+		"description": "CPU and GPU implementation in Rust of the <a href=\"https://raytracing.github.io/\" target=\"_blank\">Raytracing in a weekend series</a>.",
 		"source": "https://codeberg.org/Peanutt42/raytracer",
 		"icon": null,
 		"screenshots": [
@@ -49,6 +49,45 @@
 			{
 				"url": "/images/RayTracer - Wallpaper.webp",
 				"alt": "Raytracer wallpaper"
+			}
+		],
+		"actions": []
+	},
+	{
+		"name": "github-dark-contrast",
+		"description": "Heavily modified version of the <a href=\"https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme\">GitHub VSCode Theme</a>.<br>High contrast, saturated dark theme.<br>Available as a Neovim theme, .tmTheme file for bat, delta theme/feature and lazygit theme.",
+		"source": null,
+		"multipleSources": [
+			{
+				"name": "Neovim",
+				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.nvim"
+			},
+			{
+				"name": "Bat",
+				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.tmTheme"
+			},
+			{
+				"name": "Delta",
+				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.delta"
+			},
+			{
+				"name": "Lazygit",
+				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.lazygit"
+			},
+			{
+				"name": "Zed",
+				"url": "https://codeberg.org/Peanutt42/zed-github-dark-contrast-theme"
+			}
+		],
+		"icon": null,
+		"screenshots": [
+			{
+				"url": "/images/github-dark-contrast-theme-nvim-screenshot.webp",
+				"alt": "Screenshot of the Neovim Theme"
+			},
+			{
+				"url": "/images/github-dark-contrast-theme-lazygit-screenshot.webp",
+				"alt": "Screenshot of the Lazygit Theme"
 			}
 		],
 		"actions": []
