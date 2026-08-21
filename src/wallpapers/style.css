@@ -1,0 +1,28 @@
+.download-notice {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 4rem;
+}
+.wallpapers {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.wallpaper {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: solid;
+	border-width: 2px;
+}
+
+.wallpaper-filename {
+	font-size: 1rem;
+	color: var(--text-muted);
+}
+.wallpaper-resolution {
+	font-size: 1rem;
+	color: var(--text-muted);
+	text-align: right;
+}

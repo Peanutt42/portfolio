@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Peanutt42's Wallpapers</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div class="container">
+			<a href="/" class="project-name">$ cd ..</a>
+			<p class="project-name">$ ls ~/Pictures/Wallpapers -l</p>
+			<div class="divider"></div>
+			<p class="download-notice">
+				(Just right click and Save image as...)
+			</p>
+			<section class="wallpapers">
+				{{#each wallpapers}}
+				<div>
+					<p class="wallpaper-filename">{{this.filename}}</p>
+					<img
+						src="/wallpapers/{{this.filename}}"
+						class="wallpaper"
+						style="border-color: {{this.color}};"
+						loading="lazy"
+					/>
+					<p class="wallpaper-resolution">{{this.resolution}}</p>
+				</div>
+				{{/each}}
+			</section>
+		</div>
+	</body>
+</html>

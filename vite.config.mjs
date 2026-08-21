@@ -10,6 +10,7 @@ import { readFileSync } from "fs";
 import projects from "./src/data/projects.json" with { type: "json" };
 import socials from "./src/data/socials.json" with { type: "json" };
 import dotfilesInfo from "./src/data/dotfilesInfo.json" with { type: "json" };
+import wallpapers from "./src/data/wallpapers.json" with { type: "json" };
 
 export default defineConfig({
 	plugins: [
@@ -18,6 +19,7 @@ export default defineConfig({
 				projects,
 				socials,
 				dotfilesInfo,
+				wallpapers,
 			},
 			helpers: {
 				includes: (str, substr) => str.includes(substr),
@@ -31,10 +33,17 @@ export default defineConfig({
 		}),
 	],
 	root: "src",
+	appType: "mpa",
 	publicDir: resolve(import.meta.dirname, "public"),
 	build: {
 		outDir: "../dist",
 		emptyOutDir: true,
+		rollupOptions: {
+			input: {
+				main: "src/index.html",
+				wallpapers: "src/wallpapers/index.html",
+			},
+		},
 	},
 });
 
