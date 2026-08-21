@@ -106,8 +106,8 @@ function imageDimensionsPlugin() {
 					const metadata = await sharp(filePath).metadata();
 					if (metadata.width && metadata.height) {
 						const newTag = fullMatch.replace(
-							"<img ",
-							`<img width="${metadata.width}" height="${metadata.height}" `,
+							"<img",
+							`<img width="${metadata.width}" height="${metadata.height}"`,
 						);
 						result = result.replace(fullMatch, newTag);
 					}
