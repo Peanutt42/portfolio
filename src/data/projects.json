@@ -55,7 +55,7 @@
 	},
 	{
 		"name": "github-dark-contrast",
-		"description": "Heavily modified version of the <a href=\"https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme\">GitHub VSCode Theme</a>.<br>High contrast, saturated dark theme.<br>Available as a Neovim theme, .tmTheme file for bat, delta theme/feature and lazygit theme.",
+		"description": "Heavily modified version of the <a href=\"https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme\">GitHub VSCode Theme</a>.<br>High contrast, saturated dark theme.<br>Available as a Neovim theme, .tmTheme file for bat, delta theme/feature, lazygit and tmux theme.",
 		"source": null,
 		"multipleSources": [
 			{
@@ -73,6 +73,10 @@
 			{
 				"name": "Lazygit",
 				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.lazygit"
+			},
+			{
+				"name": "Tmux",
+				"url": "https://codeberg.org/Peanutt42/github-dark-contrast-theme.tmux"
 			},
 			{
 				"name": "Zed",
