@@ -1,36 +1,88 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<title>Ardemu Web CPU Emulator</title>
-		<link rel="icon" href="./favicon.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="./style.css" />
+		<meta charset="utf-8" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Arduino Emulator</title>
+		<link
+			rel="icon"
+			href="/ardemu_web/favicon-a28533559a5ade96.ico"
+			integrity="sha384-tUUWHlk3+Utkwhz2PoAmmY1OAWA2YoYngy0LFc3z+/toazoTyDH4KAFqiWGTbvkX"
+		/>
+		<style>
+			#loading {
+				position: fixed;
+				inset: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 16px;
+				background: #111111;
+				color: #ffffff;
+				font-family: sans-serif;
+				z-index: 1000;
+			}
+			.spinner {
+				width: 48px;
+				height: 48px;
+				border: 4px solid rgba(255, 255, 255, 0.2);
+				border-top-color: #ffffff;
+				border-radius: 50%;
+				animation: spin 0.9s linear infinite;
+			}
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			#loading.hidden {
+				display: none;
+			}
+		</style>
+		<link
+			rel="modulepreload"
+			href="/ardemu_web/ardemu_gui-b141399f6d47bd1.js"
+			crossorigin="anonymous"
+			integrity="sha384-3uV5zdj3hqN7Xx8r9bUibE+mq7t6XhOtIGiK1KvJBxAWWSrRzpkJerBiVqVJIlzJ"
+		/>
+		<link
+			rel="preload"
+			href="/ardemu_web/ardemu_gui-b141399f6d47bd1_bg.wasm"
+			crossorigin="anonymous"
+			integrity="sha384-mZGXQYfiAVftIJkhJkTzeJwV1YlJyZ3YOhJRGiJI6rMDpK40G4gZ6xA7B9ssEPSZ"
+			as="fetch"
+			type="application/wasm"
+		/>
 	</head>
-	<body>
-		<script type="module" src="./index.js"></script>
-		<div class="split-pane">
-			<div class="editor-pane">
-				<div
-					style="
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-					"
-				>
-					<h3>Assembly Editor</h3>
-				</div>
-				<textarea
-					id="editor"
-					placeholder="Enter assembly instructions here..."
-				>
-	MOV R1, 0x0A
-	ADD R2, R1, 0x14
-	CMP R2, 0x1E
-	JNE 0x0012
-				</textarea
-				>
-			</div>
-			<div class="output-pane"></div>
+	<body
+		style="
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100svh;
+			background: #111111;
+		"
+	>
+		<div id="loading">
+			<div class="spinner"></div>
+			<div>Loading WASM...</div>
 		</div>
+
+		<script type="module">
+			import init, * as bindings from "/ardemu_web/ardemu_gui-b141399f6d47bd1.js";
+			const wasm = await init({
+				module_or_path:
+					"/ardemu_web/ardemu_gui-b141399f6d47bd1_bg.wasm",
+			});
+
+			window.wasmBindings = bindings;
+
+			dispatchEvent(
+				new CustomEvent("TrunkApplicationStarted", {
+					detail: { wasm },
+				}),
+			);
+		</script>
 	</body>
 </html>
