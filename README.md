@@ -1,6 +1,6 @@
 # [peternhennig.de](https://peternhennig.de/)
 
-Uses 11ty for html templating and vite for bundling.
+Uses handlebars for html templating and vite for bundling.
 
 Personal portfolio website
 
