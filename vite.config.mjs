@@ -40,8 +40,8 @@ export default defineConfig({
 		emptyOutDir: true,
 		rollupOptions: {
 			input: {
-				main: "src/index.html",
-				wallpapers: "src/wallpapers/index.html",
+				main: "index.html",
+				wallpapers: "wallpapers/index.html",
 			},
 		},
 	},
