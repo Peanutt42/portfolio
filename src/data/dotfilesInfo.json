@@ -21,8 +21,8 @@
 	},
 	{
 		"name": "$TERM",
-		"iconUrl": "/icons/kitty.svg",
-		"value": "kitty"
+		"iconUrl": "/icons/wezterm.svg",
+		"value": "WezTerm"
 	},
 	{
 		"name": "FONT",
